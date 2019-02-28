@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="#常见二极管种类及其应用 ##1、稳压二极管 ###符号 ###作用  是反向击穿特性曲线急骤变化的二极管。作为控制电压和标准电压使用而制作的。 ###典型应用电路 ####1.浪涌保护电路稳压管在准确的电压下击穿，这就使得它可作为限制或保护之元件来使用，因为各种电压的稳压二极管都可以得到，故对于这种应用特别适宜。图中的稳压二极管D是作为过压保护器件。只要电源电压VS超过二极管的稳压值D就导通，使">
+<meta property="og:type" content="article">
+<meta property="og:title" content="常见二极管及其应用">
+<meta property="og:url" content="http://yoursite.com/2019/02/27/常见二极管及其应用/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="#常见二极管种类及其应用 ##1、稳压二极管 ###符号 ###作用  是反向击穿特性曲线急骤变化的二极管。作为控制电压和标准电压使用而制作的。 ###典型应用电路 ####1.浪涌保护电路稳压管在准确的电压下击穿，这就使得它可作为限制或保护之元件来使用，因为各种电压的稳压二极管都可以得到，故对于这种应用特别适宜。图中的稳压二极管D是作为过压保护器件。只要电源电压VS超过二极管的稳压值D就导通，使">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://yoursite.com/2019/02/27/常见二极管及其应用/稳压二极管.png">
+<meta property="og:image" content="http://file.elecfans.com/web1/M00/57/E6/o4YBAFtP7zqAbUjiAAAuuuA4buE189.jpg">
+<meta property="og:image" content="http://file.elecfans.com/web1/M00/58/01/pIYBAFtP726AYM04AAA7n-rvwQ0593.jpg">
+<meta property="og:image" content="http://file.elecfans.com/web1/M00/58/00/pIYBAFtP72GACKo7AAA1k8cDyj4601.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/02/27/常见二极管及其应用/发光二极管.png">
+<meta property="og:image" content="http://admin22.51dzw.com/UploadFiles/201201/20120107093054164.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/02/27/常见二极管及其应用/光电二极管.png">
+<meta property="og:image" content="http://www.elecfans.com/uploads/allimg/171130/2749557-1G1301S33V28.jpg">
+<meta property="og:image" content="http://www.elecfans.com/uploads/allimg/171130/2749557-1G1301S3501L.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/02/27/常见二极管及其应用/激光二极管.png">
+<meta property="og:image" content="http://www.go-gddq.com/upload/2011-12/11121112297441.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/02/27/常见二极管及其应用/肖特基二极管.jpg">
+<meta property="og:image" content="http://file.elecfans.com/web1/M00/45/2A/pIYBAFpkBiyAP69oAADCrd7zNYU558.jpg">
+<meta property="og:image" content="http://admin22.51dzw.com/UploadFiles/201301/20130103153452203.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/02/27/常见二极管及其应用/变容二极管.png">
+<meta property="og:image" content="http://yoursite.com/2019/02/27/常见二极管及其应用/变容二极管典型应用电路1.png">
+<meta property="og:image" content="http://yoursite.com/2019/02/27/常见二极管及其应用/变容二极管典型应用电路2.png">
+<meta property="og:updated_time" content="2019-02-27T11:57:31.940Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="常见二极管及其应用">
+<meta name="twitter:description" content="#常见二极管种类及其应用 ##1、稳压二极管 ###符号 ###作用  是反向击穿特性曲线急骤变化的二极管。作为控制电压和标准电压使用而制作的。 ###典型应用电路 ####1.浪涌保护电路稳压管在准确的电压下击穿，这就使得它可作为限制或保护之元件来使用，因为各种电压的稳压二极管都可以得到，故对于这种应用特别适宜。图中的稳压二极管D是作为过压保护器件。只要电源电压VS超过二极管的稳压值D就导通，使">
+<meta name="twitter:image" content="http://yoursite.com/2019/02/27/常见二极管及其应用/稳压二极管.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/02/27/常见二极管及其应用/">
+
+
+
+
+
+  <title>常见二极管及其应用 | Hexo</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hexo</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/27/常见二极管及其应用/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">常见二极管及其应用</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-02-27T16:11:36+08:00">
+                2019-02-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>#常见二极管种类及其应用</p>
+<p>##1、稳压二极管</p>
+<p>###符号<br><img src="/2019/02/27/常见二极管及其应用/稳压二极管.png" alt="示例图片" title="示例图片"></p>
+<p>###作用<br>  是反向击穿特性曲线急骤变化的二极管。作为控制电压和标准电压使用而制作的。</p>
+<p>###典型应用电路</p>
+<p>####1.<br><img src="http://file.elecfans.com/web1/M00/57/E6/o4YBAFtP7zqAbUjiAAAuuuA4buE189.jpg" alt="浪涌保护电路"><br>浪涌保护电路<br>稳压管在准确的电压下击穿，这就使得它可作为限制或保护之元件来使用，因为各种电压的稳压二极管都可以得到，故对于这种应用特别适宜。图中的稳压二极管D是作为过压保护器件。只要电源电压VS超过二极管的稳压值D就导通，使继电器J吸合负载RL就与电源分开。</p>
+<p>####2.<br><img src="http://file.elecfans.com/web1/M00/58/01/pIYBAFtP726AYM04AAA7n-rvwQ0593.jpg" alt="串联稳压电路"><br>电路如图所示，在此电路中，串联稳压管，BG的基极被稳压二极管D钳定在13V，那么其发射极就输出恒定的12V电压了。</p>
+<p>####3.<br><img src="http://file.elecfans.com/web1/M00/58/00/pIYBAFtP72GACKo7AAA1k8cDyj4601.jpg" alt="电弧抑制电路"><br>在电感线圈上并联接入一只合适的稳压二极管（也可接入一只普通 二极管原理一样）的话，当线圈在导通状态切断时，由于其电磁能释放所产生的高压就被二极管所吸收，所以当开关断开时，开关的电弧也就被消除了。这个应用电路在工业上用得比较多，如一些较大功率的电磁吸控制电路就用到它。</p>
+<p>##2、发光二极管</p>
+<p>###符号<br><img src="/2019/02/27/常见二极管及其应用/发光二极管.png" alt="发光二极管"></p>
+<p>###作用<br>指示灯，照明等。</p>
+<p>###应用电路</p>
+<p>####1.作为指示灯<br><img src="http://admin22.51dzw.com/UploadFiles/201201/20120107093054164.jpg" alt="发光二极管指示灯电路"><br>当电路导通时，二极管发光，可以检验电路是否导通。</p>
+<p>####2.照明用</p>
+<p>##3、光电二极管</p>
+<p>###符号<br><img src="/2019/02/27/常见二极管及其应用/光电二极管.png" alt="光电二极管"></p>
+<p>###作用<br>光电二极管的作用是进行光电BFQ591转换，在光控、红外遥控、光探测、光纤通信和光电耦合等方面有，“泛的应用。</p>
+<p>###应用电路</p>
+<p>####1、光控<br><img src="http://www.elecfans.com/uploads/allimg/171130/2749557-1G1301S33V28.jpg" alt="光电二极管应用电路"><br> 光电二极管可以用作光控开关，电路如图7-8所示。无光照时，光电二极管VD，因接反向电压而截止，晶体三极管VT．、VT2因无基极电流也截止，继电器处于释放状态。当有光线照射到光电二极管VD．时，VD．从截止转变为导通，使VTI、VT2相继导通，继电器K吸合，接通被控电路。</p>
+<p>####2.光信号接受<br><img src="http://www.elecfans.com/uploads/allimg/171130/2749557-1G1301S3501L.jpg" alt="光信号接收电路图"><br> 光电二极管可以用作接收光信号。图7-9所示为光信号接收放大电路，光信号由光电二极管VD接收，经VT放大后通过耦合电容C输出。</p>
+<p>##4.激光二极管</p>
+<p>###符号<br><img src="/2019/02/27/常见二极管及其应用/激光二极管.png" alt="激光二极管"></p>
+<p>###作用<br>主要发射红外线。可以光电二极管共同使用，光电二极管可以接受激光二极管所产生的相干的单色光信号。</p>
+<p>###应用电路</p>
+<p>####1。驱动APC电路<br><img src="http://www.go-gddq.com/upload/2011-12/11121112297441.jpg" alt="驱动APC电路"></p>
+<p>激光二极管(以下称LD)即使采用恒流驱动，其光输出功率也会随温度变化而发生大的变动，因此必须监视它的光输出，利用反馈环路来控制驱动电流，这即是自动输出控制APC(AutomatICPowerControl)电路。取自<a href="http://www.go-gddq.com/html/s696/2011-12/850171.htm" target="_blank" rel="noopener">http://www.go-gddq.com/html/s696/2011-12/850171.htm</a></p>
+<p>##5.肖特基二极管</p>
+<p>###符号<br><img src="/2019/02/27/常见二极管及其应用/肖特基二极管.jpg" alt="肖特基二极管"></p>
+<p>###特点<br>1.肖特基二极管的电容效应非常小，工作速度非常快，特别适合于高频或者开关电路。</p>
+<p>2.肖特基二极管的开启电压正向导通压降逗比普通硅二极管略低，大约低0.2V。</p>
+<p>3.肖特基二极管的反向击穿电压比较低，一般不高于60V，最高越100V，且反向饱和电流比普通二极管大。</p>
+<p>###应用电路</p>
+<p>####1.数字电路设计中<br><img src="http://file.elecfans.com/web1/M00/45/2A/pIYBAFpkBiyAP69oAADCrd7zNYU558.jpg" alt=" "><br>在数字电路设计中，往往需要实现一些信号简单的相与、相或、反相。如果直接采用74系列等逻辑芯片，不仅布板面积大大增加，布线也不具灵活性。而采用小信号肖特基二极管组成与或门电路会更加的灵活好用。下图为一个简单的二路复位电路，JTAG产生复位信号需要复位主控器，而外部复位键也需要在按下时实现复位主控器。如果JTAG复位与按键复位直接线与输出到主控器的复位脚，将可能对JTAG仿真器造成损害。例如，按下复位键时，将直接把JTAG输出复位脚位低。而通过肖特基二极管BAT54A组成相与电路，各个信号输出不会相互影响。下图只要JTAG输出0逻辑或按键复位输出0逻辑都能让主控器实现复位。</p>
+<p>####2.步进电机驱动应用<br><img src="http://admin22.51dzw.com/UploadFiles/201301/20130103153452203.jpg" alt=" "></p>
+<p>所示是肖特基二极管一种应PLT262用电路，这是肖特基二极管在步进电机驱动电路中的应周，VD1、VD2、VD3和VD4为肖特基二极管。</p>
+<p>利用肖特基二极管的管压降小、恢复时间快的特点，这样大部分电流就流过外部的肖特基二极管，集成电路Al内部的功耗就小了很多，提高了热稳定性能，也就提高了可靠性。</p>
+<p>##6.变容二极管</p>
+<p>###符号<br><img src="/2019/02/27/常见二极管及其应用/变容二极管.png" alt=" "></p>
+<p>###作用、原理<br>利用PN结的结电容随反向电压的增加而减小的特点可以制成变容二极管。长虹与彩色电视机的电子调谐器，通过改变变容二极管的结电容来改变谐振频率，从而实现频道的选择。</p>
+<p>###应用电路<br>可参考 <a href="http://www.elecfans.com/yuanqijian/erjiguang/20180125622810_2.html" target="_blank" rel="noopener">http://www.elecfans.com/yuanqijian/erjiguang/20180125622810_2.html</a></p>
+<p><img src="/2019/02/27/常见二极管及其应用/变容二极管典型应用电路1.png" alt="变容二极管典型应用电路1"><br>  电容C1与变容二极管VD1结电容串联，然后与L1并联构成LC并联谐振电路。正极性的直流电压通过电阻R1加到VD1负极，当这一直流电压大小变化时，给VD1加的反向偏置电压大小改变，其结电容容量大小也改变，这样LC并联谐振电路的谐振频率也随之改变。</p>
+<p> 给变容二极管加上反向直流偏置电压，当这- -反向偏置电压大小改变时，变容二极管的结电容容量大小在改变。</p>
+<p>  变容二极管的结电容与C1串联的总电容与L1并联，变容二极管的结电容只是这个LC并联电路中的1只容量可变的电容，改变变容二极管的容量，既能改变这时LC并联谐振电路的谐振频率。<br><img src="/2019/02/27/常见二极管及其应用/变容二极管典型应用电路2.png" alt="  "></p>
+<p>   变容二极管是电子可变电容。换句话说，变容二极管表现出来的电容是反偏电势的函数。这种现象导致了变容二极管在一些需要考虑电容因素的场合的几种常见应用。图1为一个典型的变容二极管调谐的LC振荡电路。电路耦合电感L2,的作用是当振荡电路被当作射频放大器使用时，将射频信号输人到振荡电路。主要的LC振荡电路包括主电感L1，和电容C1与CR1的串联电容。除此之外，还要考虑广泛存在于电子线路的杂散电容Cs。隔直电容和串联电阻的功能前面已经介绍过了。电容C2的作用是对调谐电压Vin,进行滤波。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/02/17/ROS机器人几种避障方法/" rel="next" title="">
+                <i class="fa fa-chevron-left"></i> 
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+<span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_fav">收藏夹</a>
+<a class="jiathis_button_copy">复制网址</a>
+<a class="jiathis_button_email">邮件</a>
+<a class="jiathis_button_weixin">微信</a>
+<a class="jiathis_button_qzone">QQ空间</a>
+<a class="jiathis_button_tqq">腾讯微博</a>
+<a class="jiathis_button_douban">豆瓣</a>
+<a class="jiathis_button_share">一键分享</a>
+
+<a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript">
+var jiathis_config={
+  data_track_clickback:true,
+  summary:"",
+  shortUrl:false,
+  hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">John Doe</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+    </aside>
+    <div id="music163player">
+    <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="120" height="30" src="//music.163.com/outchain/player?type=2&id=38358214&auto=0&height=66">
+    </iframe>
+    </div>
+
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+<div class="powered-by">
+<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+  本站访客数:<span id="busuanzi_value_site_uv"></span>
+</span>
+</div>
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+
+</div></body>
+</html>
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>
