@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="———————————————————————————————————— MOS管由于具有良好的温度特性，良好的噪声特性，输入阻抗高，工作频率高且功耗小等优点，常被用于开关电路中。在电机驱动电路中更是常常用到。电机驱动电路MOS管的选择是电驱工作好坏的一个重要指标。在使用MOS管设计开关电源或者马达驱动电路的时候，大部分人都会考虑MOS的导通电阻，最大电压等，最大电流等，也有很多人仅仅考虑这些因素">
+<meta property="og:type" content="article">
+<meta property="og:title" content="电机驱动关于mos的选择">
+<meta property="og:url" content="http://yoursite.com/2019/03/15/电机驱动关于mos的选择/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="———————————————————————————————————— MOS管由于具有良好的温度特性，良好的噪声特性，输入阻抗高，工作频率高且功耗小等优点，常被用于开关电路中。在电机驱动电路中更是常常用到。电机驱动电路MOS管的选择是电驱工作好坏的一个重要指标。在使用MOS管设计开关电源或者马达驱动电路的时候，大部分人都会考虑MOS的导通电阻，最大电压等，最大电流等，也有很多人仅仅考虑这些因素">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="https://ps.ssl.qhimg.com/sdmt/468_264_100/t010eafd72e6f6a8150.png">
+<meta property="og:updated_time" content="2019-03-15T13:34:57.624Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="电机驱动关于mos的选择">
+<meta name="twitter:description" content="———————————————————————————————————— MOS管由于具有良好的温度特性，良好的噪声特性，输入阻抗高，工作频率高且功耗小等优点，常被用于开关电路中。在电机驱动电路中更是常常用到。电机驱动电路MOS管的选择是电驱工作好坏的一个重要指标。在使用MOS管设计开关电源或者马达驱动电路的时候，大部分人都会考虑MOS的导通电阻，最大电压等，最大电流等，也有很多人仅仅考虑这些因素">
+<meta name="twitter:image" content="https://ps.ssl.qhimg.com/sdmt/468_264_100/t010eafd72e6f6a8150.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/03/15/电机驱动关于mos的选择/">
+
+
+
+
+
+  <title>电机驱动关于mos的选择 | Hexo</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hexo</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/15/电机驱动关于mos的选择/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">电机驱动关于mos的选择</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-15T21:00:15+08:00">
+                2019-03-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>————————————————————————————————————</p>
+<p><strong>MOS管由于具有良好的温度特性，良好的噪声特性，输入阻抗高，工作频率高且功耗小等优点，常被用于开关电路中。在电机驱动电路中更是常常用到。电机驱动电路MOS管的选择是电驱工作好坏的一个重要指标。在使用MOS管设计开关电源或者马达驱动电路的时候，大部分人都会考虑MOS的导通电阻，最大电压等，最大电流等，也有很多人仅仅考虑这些因素。这样的电路也许是可以工作的，但并不是优秀的，作为正式的产品设计也是不允许的。
+</strong></p>
+<p>——————————————————————————————-</p>
+<p><strong>MOS的选型要从以下几个方面考虑</strong></p>
+<h1 id="1-、MOS管种类和结构"><a href="#1-、MOS管种类和结构" class="headerlink" title="1.、MOS管种类和结构"></a>1.、MOS管种类和结构</h1><p>   MOSFET管是FET的一种（另一种是JFET），可以被制造成增强型或耗尽型，P沟道或N沟道共4种类型，但实际应用的只有增强型的N沟道MOS管和增强型的P沟道MOS管，所以通常提到NMOS，或者PMOS指的就是这两种。对于这两种增强型MOS管，比较常用的是NMOS。原因是导通电阻小，且容易制造。所以开关电源和马达驱动的应用中，一般都用NMOS。下面的介绍中，也多以NMOS为主。<br>   MOS管的三个管脚之间有寄生电容存在，这不是我们需要的，而是由于制造工艺限制产生的。寄生电容的存在使得在设计或选择驱动电路的时候要麻烦一些，但没有办法避免，后边再详细介绍。<br>   在MOS管原理图上可以看到，漏极和源极之间有一个寄生二极管。这个叫体二极管，在驱动感性负载（如马达），这个二极管很重要。顺便说一句，体二极管只在单个的MOS管中存在，在集成电路芯片内部通常是没有的。</p>
+<p><img src="https://ps.ssl.qhimg.com/sdmt/468_264_100/t010eafd72e6f6a8150.png" alt="N,PMOS符号"></p>
+<h1 id="2-MOS管导通特性"><a href="#2-MOS管导通特性" class="headerlink" title="2.MOS管导通特性"></a>2.MOS管导通特性</h1><p>导通的意思是作为开关，相当于开关闭合。<br>NMOS的特性，Vgs大于一定的值就会导通，适合用于源极接地时的情况（低端驱动），只要栅极电压达到4V或10V就可以了。<br>PMOS的特性，Vgs小于一定的值就会导通，适合用于源极接VCC时的情况（高端驱动）。但是，虽然PMOS可以很方便地用作高端驱动，但由于导通电阻大，价格贵，替换种类少等原因，在高端驱动中，通常还是使用NMOS。</p>
+<h1 id="3-开关损失"><a href="#3-开关损失" class="headerlink" title="3.开关损失"></a>3.开关损失</h1><p>  不管是NMOS还是PMOS，导通后都有导通电阻存在，这样电流就会在这个电阻上消耗能量，这部分消耗的能量叫做导通损耗。选择导通电阻小的MOS管会减小导通损耗。现在的小功率MOS管导通电阻一般在几十毫欧左右，几毫欧的也有。<br>  MOS在导通和截止的时候，一定不是在瞬间完成的。MOS两端的电压有一个下降的过程，流过的电流有一个上升的过程，在这段时间内，MOS管的损失是电压和电流的乘积，叫做开关损失。通常开关损失比导通损失大得多，而且开关频率越快，损失也越大。<br>  导通瞬间电压和电流的乘积很大，造成的损失也就很大。缩短开关时间，可以减小每次导通时的损失；降低开关频率，可以减小单位时间内的开关次数。这两种办法都可以减小开关损失。</p>
+<h1 id="4、MOS管驱动"><a href="#4、MOS管驱动" class="headerlink" title="4、MOS管驱动"></a>4、MOS管驱动</h1><p>跟双极性晶体管相比，一般认为使MOS管导通不需要电流，只要GS电压高于一定的值，就可以了。这个很容易做到，但是，我们还需要速度。<br>在MOS管的结构中可以看到，在GS，GD之间存在寄生电容，而MOS管的驱动，实际上就是对电容的充放电。对电容的充电需要一个电流，因为对电容充电瞬间可以把电容看成短路，所以瞬间电流会比较大。选择/设计MOS管驱动时第一要注意的是可提供瞬间短路电流的大小。<br>第二注意的是，普遍用于高端驱动的NMOS，导通时需要是栅极电压大于源极电压。而高端驱动的MOS管导通时源极电压与漏极电压（VCC）相同，所以这时栅极电压要比VCC大4V或10V。如果在同一个系统里，要得到比VCC大的电压，就要专门的升压电路了。很多马达驱动器都集成了电荷泵，要注意的是应该选择合适的外接电容，以得到足够的短路电流去驱动MOS管。</p>
+<h1 id="5-MOS管发热几种原因"><a href="#5-MOS管发热几种原因" class="headerlink" title="5.MOS管发热几种原因"></a>5.MOS管发热几种原因</h1><p><strong>电机驱动中有时会遇到MOS管发热的问题，可以分为以下几种原因</strong></p>
+<h2 id="1"><a href="#1" class="headerlink" title="1."></a>1.</h2><p>电路设计的问题，就是让MOS管工作在线性的工作状态，而不是在开关状态。这也是导致MOS管发热的一个原因。如果N-MOS做开关，G级电压要比电源高几V，才能完全导通，P-MOS则相反。没有完全打开而压降过大造成功率消耗，等效直流阻抗比较大，压降增大，所以U*I也增大，损耗就意味着发热。这是设计电路的最忌讳的错误。</p>
+<h2 id="2"><a href="#2" class="headerlink" title="2."></a>2.</h2><p>频率太高，主要是有时过分追求体积，导致频率提高，MOS管上的损耗增大了，所以发热也加大了。</p>
+<h2 id="3"><a href="#3" class="headerlink" title="3."></a>3.</h2><p>没有做好足够的散热设计，电流太高，MOS管标称的电流值，一般需要良好的散热才能达到。所以ID小于最大电流，也可能发热严重，需要足够的辅助散热片。</p>
+<h2 id="4"><a href="#4" class="headerlink" title="4."></a>4.</h2><p>MOS管的选型有误，对功率判断有误，MOS管内阻没有充分考虑，导致开关阻抗增大。</p>
+<h1 id="6-几种常见的三极管"><a href="#6-几种常见的三极管" class="headerlink" title="6.几种常见的三极管"></a>6.几种常见的三极管</h1><p><strong>型号 电压/电流 封装</strong></p>
+<p>2N7000 60V,0.115A TO-92</p>
+<p>2N7002 60V,0.2A SOT-23</p>
+<p>IRF510A 100V,5.6A TO-220</p>
+<p>IRF520A 100V,9.2A TO-220</p>
+<p>IRF530A 100V,14A TO-220</p>
+<p>IRF540A 100V,28A TO-220</p>
+<p>IRF610A 200V,3.3A TO-220</p>
+<p>IRF620A 200V,5A TO-220</p>
+<p>IRF630A 200V,9A TO-220</p>
+<p>IRF634A 250V,8.1A TO-220</p>
+<p>IRF640A 200V,18A TO-220</p>
+<p>IRF644A 250V,14A TO-220</p>
+<p>IRF650A 200V,28A TO-220</p>
+<p>IRF654A 250V,21A TO-220</p>
+<p>IRF720A 400V,3.3A TO-220</p>
+<p>IRF730A 400V,5.5A TO-220</p>
+<p>IRF740A 400V,10A TO-220</p>
+<p>IRF750A 400V,15A TO-220</p>
+<p>IRF820A 500V,2.5A TO-220</p>
+<p>IRF830A 500V,4.5A TO-220</p>
+<p>IRF840A 500V,8A TO-220</p>
+<p>IRFP150A 100V,43A TO-3P</p>
+<p>IRFP250A 200V,32A TO-3P</p>
+<p>IRFP450A 500V,14A TO-3P</p>
+<p>IRFR024A 60V,15A D-PAK</p>
+<p>IRFR120A 100V,8.4A D-PAK</p>
+<p>IRFR214A 250V,2.2A D-PAK</p>
+<p>IRFR220A 200V,4.6A D-PAK</p>
+<p>IRFR224A 250V,3.8A D-PAK</p>
+<p>IRFR310A 400V,1.7A D-PAK</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/03/07/电机驱动/" rel="next" title="">
+                <i class="fa fa-chevron-left"></i> 
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+<span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_fav">收藏夹</a>
+<a class="jiathis_button_copy">复制网址</a>
+<a class="jiathis_button_email">邮件</a>
+<a class="jiathis_button_weixin">微信</a>
+<a class="jiathis_button_qzone">QQ空间</a>
+<a class="jiathis_button_tqq">腾讯微博</a>
+<a class="jiathis_button_douban">豆瓣</a>
+<a class="jiathis_button_share">一键分享</a>
+
+<a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript">
+var jiathis_config={
+  data_track_clickback:true,
+  summary:"",
+  shortUrl:false,
+  hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">John Doe</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-、MOS管种类和结构"><span class="nav-number">1.</span> <span class="nav-text">1.、MOS管种类和结构</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-MOS管导通特性"><span class="nav-number">2.</span> <span class="nav-text">2.MOS管导通特性</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-开关损失"><span class="nav-number">3.</span> <span class="nav-text">3.开关损失</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4、MOS管驱动"><span class="nav-number">4.</span> <span class="nav-text">4、MOS管驱动</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-MOS管发热几种原因"><span class="nav-number">5.</span> <span class="nav-text">5.MOS管发热几种原因</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1"><span class="nav-number">5.1.</span> <span class="nav-text">1.</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2"><span class="nav-number">5.2.</span> <span class="nav-text">2.</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3"><span class="nav-number">5.3.</span> <span class="nav-text">3.</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4"><span class="nav-number">5.4.</span> <span class="nav-text">4.</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6-几种常见的三极管"><span class="nav-number">6.</span> <span class="nav-text">6.几种常见的三极管</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+    </aside>
+    <div id="music163player">
+    <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="280" height="86" src="//music.163.com/outchain/player?type=2&id=38358214&auto=0&height=66">
+    </iframe>
+    </div>
+
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+<div class="powered-by">
+<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+  本站访客数:<span id="busuanzi_value_site_uv"></span>
+</span>
+</div>
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+<script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+
+
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+
+</div><script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>
+
