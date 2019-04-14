@@ -229,6 +229,131 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/14/画单片机主板PCB一些注意的/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/04/14/画单片机主板PCB一些注意的/" itemprop="url">画单片机主板PCB一些注意的</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-04-14T10:08:25+08:00">
+                2019-04-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="1-晶振"><a href="#1-晶振" class="headerlink" title="1.晶振"></a>1.晶振</h1><h3 id="1-晶振下面尽量少走线或不走线。"><a href="#1-晶振下面尽量少走线或不走线。" class="headerlink" title="1.晶振下面尽量少走线或不走线。"></a>1.晶振下面尽量少走线或不走线。</h3><h3 id="2-晶振要靠近IC。"><a href="#2-晶振要靠近IC。" class="headerlink" title="2.晶振要靠近IC。"></a>2.晶振要靠近IC。</h3><h3 id="3-一般的32芯片内部有晶振，可以不用32-768KHz的，只用一个8KHz的。"><a href="#3-一般的32芯片内部有晶振，可以不用32-768KHz的，只用一个8KHz的。" class="headerlink" title="3.一般的32芯片内部有晶振，可以不用32.768KHz的，只用一个8KHz的。"></a>3.一般的32芯片内部有晶振，可以不用32.768KHz的，只用一个8KHz的。</h3><h3 id="4-晶振外壳尽量接地。"><a href="#4-晶振外壳尽量接地。" class="headerlink" title="4.晶振外壳尽量接地。"></a>4.晶振外壳尽量接地。</h3><h3 id="5-靠近晶振附近少走线，晶振不要放到板子边上。"><a href="#5-靠近晶振附近少走线，晶振不要放到板子边上。" class="headerlink" title="5.靠近晶振附近少走线，晶振不要放到板子边上。"></a>5.靠近晶振附近少走线，晶振不要放到板子边上。</h3><h1 id="2-分地"><a href="#2-分地" class="headerlink" title="2.分地"></a>2.分地</h1><h3 id="数字信号和模拟信号分地，一般是稳压过后将GND分为AGND和DGND，并用0欧电阻或者磁珠连接。PCB布局时将模拟信号的器件放一个区域，数字信号的器件放一个区。铺铜分开铺。分地可以减少不通信号之间的影响，比如在板子上有电机驱动电路。"><a href="#数字信号和模拟信号分地，一般是稳压过后将GND分为AGND和DGND，并用0欧电阻或者磁珠连接。PCB布局时将模拟信号的器件放一个区域，数字信号的器件放一个区。铺铜分开铺。分地可以减少不通信号之间的影响，比如在板子上有电机驱动电路。" class="headerlink" title="数字信号和模拟信号分地，一般是稳压过后将GND分为AGND和DGND，并用0欧电阻或者磁珠连接。PCB布局时将模拟信号的器件放一个区域，数字信号的器件放一个区。铺铜分开铺。分地可以减少不通信号之间的影响，比如在板子上有电机驱动电路。"></a>数字信号和模拟信号分地，一般是稳压过后将GND分为AGND和DGND，并用0欧电阻或者磁珠连接。PCB布局时将模拟信号的器件放一个区域，数字信号的器件放一个区。铺铜分开铺。分地可以减少不通信号之间的影响，比如在板子上有电机驱动电路。</h3><h1 id="3"><a href="#3" class="headerlink" title="3."></a>3.</h1><p>###1增大线路之间的距离是减小电容耦合的最好办法，</p>
+<p>###2滤波的电容应该靠近需要滤波的元器件。</p>
+<p>###3保护环。  可以用地线围成一个环形，将保护逻辑围起来进行隔离。</p>
+<p>###4短线规则。 布线尽量短，特别是重要信号线，如时钟线。</p>
+<p>###5，电源线地线旁边打些小过孔，GND网络，可以起到散热作用。一些发热的芯片旁边也要。</p>
+<p>###6.大过孔要用多个小过孔替代。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/15/电机驱动关于mos的选择/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -967,7 +1092,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
