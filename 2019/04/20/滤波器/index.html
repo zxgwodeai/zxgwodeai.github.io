@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="1.通频带  通频带用于衡量放大电路对不同频率信号的放大能力。由于放大电路中电容、电感及半导体器件结电容等电抗元件的存在，在输入信号频率较低或较高时，放大倍数的数值会下降并产生相移。通常情况下，放大电路只适用于放大某一个特定频率范围内的信号。 下限截止频率fL:在信号频率下降到一定程度时，放大倍数的数值明显下降，使放大倍数的数值等于0.707倍 的频率称为下 限截止频率fL。 上限截止频率fH:信">
+<meta property="og:type" content="article">
+<meta property="og:title" content="滤波器">
+<meta property="og:url" content="http://yoursite.com/2019/04/20/滤波器/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="1.通频带  通频带用于衡量放大电路对不同频率信号的放大能力。由于放大电路中电容、电感及半导体器件结电容等电抗元件的存在，在输入信号频率较低或较高时，放大倍数的数值会下降并产生相移。通常情况下，放大电路只适用于放大某一个特定频率范围内的信号。 下限截止频率fL:在信号频率下降到一定程度时，放大倍数的数值明显下降，使放大倍数的数值等于0.707倍 的频率称为下 限截止频率fL。 上限截止频率fH:信">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="https://p1.ssl.qhmsg.com/dr/220__/t01594ec815fb950d55.jpg">
+<meta property="og:image" content="https://img-blog.csdn.net/20180426202706567?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3h2MTM1NjAyNzg5Nw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+<meta property="og:image" content="http://www.elecfans.com/uploads/allimg/171113/2755780-1G113145TC15.jpg">
+<meta property="og:image" content="http://www.elecfans.com/uploads/allimg/171113/2755780-1G113145K3B0.jpg">
+<meta property="og:image" content="http://www.elecfans.com/uploads/allimg/171113/2755780-1G113145P6120.jpg">
+<meta property="og:image" content="http://www.elecfans.com/uploads/allimg/171113/2755780-1G113145QG30.jpg">
+<meta property="og:image" content="http://www.elecfans.com/uploads/allimg/171113/2755780-1G113145RX40.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/04/20/滤波器/example.png%22图片%22">
+<meta property="og:updated_time" content="2019-04-20T12:58:17.511Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="滤波器">
+<meta name="twitter:description" content="1.通频带  通频带用于衡量放大电路对不同频率信号的放大能力。由于放大电路中电容、电感及半导体器件结电容等电抗元件的存在，在输入信号频率较低或较高时，放大倍数的数值会下降并产生相移。通常情况下，放大电路只适用于放大某一个特定频率范围内的信号。 下限截止频率fL:在信号频率下降到一定程度时，放大倍数的数值明显下降，使放大倍数的数值等于0.707倍 的频率称为下 限截止频率fL。 上限截止频率fH:信">
+<meta name="twitter:image" content="https://p1.ssl.qhmsg.com/dr/220__/t01594ec815fb950d55.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/04/20/滤波器/">
+
+
+
+
+
+  <title>滤波器 | Hexo</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hexo</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/20/滤波器/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">滤波器</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-04-20T20:01:21+08:00">
+                2019-04-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="1-通频带"><a href="#1-通频带" class="headerlink" title="1.通频带"></a>1.通频带</h1><p>  通频带用于衡量放大电路对不同频率信号的放大能力。由于放大电路中电容、电感及半导体器件结电容等电抗元件的存在，在输入信号频率较低或较高时，放大倍数的数值会下降并产生相移。通常情况下，放大电路只适用于放大某一个特定频率范围内的信号。</p>
+<p><img src="https://p1.ssl.qhmsg.com/dr/220__/t01594ec815fb950d55.jpg" alt=""><br>下限截止频率fL:在信号频率下降到一定程度时，放大倍数的数值明显下降，使放大倍数的数值等于0.707倍 的频率称为下 限截止频率fL。</p>
+<p>上限截止频率fH:信号频率上升到一定程度时，放大倍数的数值也将下降，使放大倍数的数值等于0.707倍 的频率称为上限截止频率fH。</p>
+<p>通频带fbw:fL与fH之间形成的频带称中频段，或通频带fbw。</p>
+<p>fbw=fH-fL.<br>或者定义为:</p>
+<p>在信号传输系统中,系统输出信号从最大值衰减3dB的信号频率为截止频率,上下截止频率之间的频带称为通频带,用BW表示</p>
+<p>通频带越宽，表明放大电路对不同频率信号的适应能力越强。</p>
+<h2 id="通频带越窄，表明电路对通频带中心频率的选择能力越强。"><a href="#通频带越窄，表明电路对通频带中心频率的选择能力越强。" class="headerlink" title="通频带越窄，表明电路对通频带中心频率的选择能力越强。"></a>通频带越窄，表明电路对通频带中心频率的选择能力越强。</h2><h1 id="2"><a href="#2" class="headerlink" title="2."></a>2.</h1><p><img src="https://img-blog.csdn.net/20180426202706567?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3h2MTM1NjAyNzg5Nw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt=""></p>
+<h2 id="1-巴特沃斯滤波器"><a href="#1-巴特沃斯滤波器" class="headerlink" title="1.巴特沃斯滤波器"></a>1.巴特沃斯滤波器</h2><h2 id="巴特沃斯滤波器的特点是通频带内的频率响应曲线最大限度平坦，没有起伏，而在阻频带则逐渐下降为零。在振幅的对数对角频率的波特图上，从某一边界角频率开始，振幅随着角频率的增加而逐步减少，趋向负无穷大。巴特沃斯滤波器的频率特性曲线，无论在通带内还是阻带内都是频率的单调函数。因此，当通带的边界处满足指标要求时，通带内肯定会有裕量。所以，更有效的设计方法应该是将精确度均匀的分布在整个通带或阻带内，或者同时分布在两者之内。这样就可用较低阶数的系统满足要求。这可通过选择具有等波纹特性的逼近函数来达到。"><a href="#巴特沃斯滤波器的特点是通频带内的频率响应曲线最大限度平坦，没有起伏，而在阻频带则逐渐下降为零。在振幅的对数对角频率的波特图上，从某一边界角频率开始，振幅随着角频率的增加而逐步减少，趋向负无穷大。巴特沃斯滤波器的频率特性曲线，无论在通带内还是阻带内都是频率的单调函数。因此，当通带的边界处满足指标要求时，通带内肯定会有裕量。所以，更有效的设计方法应该是将精确度均匀的分布在整个通带或阻带内，或者同时分布在两者之内。这样就可用较低阶数的系统满足要求。这可通过选择具有等波纹特性的逼近函数来达到。" class="headerlink" title=" 巴特沃斯滤波器的特点是通频带内的频率响应曲线最大限度平坦，没有起伏，而在阻频带则逐渐下降为零。在振幅的对数对角频率的波特图上，从某一边界角频率开始，振幅随着角频率的增加而逐步减少，趋向负无穷大。巴特沃斯滤波器的频率特性曲线，无论在通带内还是阻带内都是频率的单调函数。因此，当通带的边界处满足指标要求时，通带内肯定会有裕量。所以，更有效的设计方法应该是将精确度均匀的分布在整个通带或阻带内，或者同时分布在两者之内。这样就可用较低阶数的系统满足要求。这可通过选择具有等波纹特性的逼近函数来达到。"></a> 巴特沃斯滤波器的特点是通频带内的频率响应曲线最大限度平坦，没有起伏，而在阻频带则逐渐下降为零。在振幅的对数对角频率的波特图上，从某一边界角频率开始，振幅随着角频率的增加而逐步减少，趋向负无穷大。巴特沃斯滤波器的频率特性曲线，无论在通带内还是阻带内都是频率的单调函数。因此，当通带的边界处满足指标要求时，通带内肯定会有裕量。所以，更有效的设计方法应该是将精确度均匀的分布在整个通带或阻带内，或者同时分布在两者之内。这样就可用较低阶数的系统满足要求。这可通过选择具有等波纹特性的逼近函数来达到。</h2><h2 id="2-切比雪夫滤波器"><a href="#2-切比雪夫滤波器" class="headerlink" title="2.切比雪夫滤波器"></a>2.切比雪夫滤波器</h2><h2 id="切比雪夫滤波器是在通带或阻带上频率响应幅度等波纹波动的滤波器，振幅特性在通带内是等波纹。在阻带内是单调的称为切比雪夫I型滤波器；振幅特性在通带内是单调的，在阻带内是等波纹的称为切比雪夫II型滤波器。采用何种形式的切比雪夫滤波器取决于实际用途。"><a href="#切比雪夫滤波器是在通带或阻带上频率响应幅度等波纹波动的滤波器，振幅特性在通带内是等波纹。在阻带内是单调的称为切比雪夫I型滤波器；振幅特性在通带内是单调的，在阻带内是等波纹的称为切比雪夫II型滤波器。采用何种形式的切比雪夫滤波器取决于实际用途。" class="headerlink" title="切比雪夫滤波器是在通带或阻带上频率响应幅度等波纹波动的滤波器，振幅特性在通带内是等波纹。在阻带内是单调的称为切比雪夫I型滤波器；振幅特性在通带内是单调的，在阻带内是等波纹的称为切比雪夫II型滤波器。采用何种形式的切比雪夫滤波器取决于实际用途。"></a>切比雪夫滤波器是在通带或阻带上频率响应幅度等波纹波动的滤波器，振幅特性在通带内是等波纹。在阻带内是单调的称为切比雪夫I型滤波器；振幅特性在通带内是单调的，在阻带内是等波纹的称为切比雪夫II型滤波器。采用何种形式的切比雪夫滤波器取决于实际用途。</h2><h2 id="3-椭圆滤波器"><a href="#3-椭圆滤波器" class="headerlink" title="3.椭圆滤波器"></a>3.椭圆滤波器</h2><p>椭圆滤波器（EllipTIc filter）又称考尔滤波器（Cauer filter），是在通带和阻带等波纹的一种滤波器。它比切比雪夫方式更进一步地是同时用通带和阻带的起伏为代价来换取过渡带更为陡峭的特性。相较其他类型的滤波器，椭圆滤波器在阶数相同的条件下有着最小的通带和阻带波动。</p>
+<h2 id="4。贝塞尔滤波器"><a href="#4。贝塞尔滤波器" class="headerlink" title="4。贝塞尔滤波器"></a>4。贝塞尔滤波器</h2><p>贝赛尔（Bessel）滤波器是具有最大平坦的群延迟（线性相位响应）的线性过滤器。贝赛尔滤波器常用在音频天桥系统中。模拟贝赛尔滤波器描绘为几乎横跨整个通频带的恒定的群延迟，因而在通频带上保持了被过滤的信号波形。</p>
+<p>　　贝塞尔（Bessel）滤波器具有最平坦的幅度和相位响应。带通（通常为用户关注区域）的相位响应近乎呈线性。Bessel滤波器可用于减少所有IIR滤波器固有的非线性相位失真。贝塞尔（Bessel）线性相位滤波器正是由于具有向其截止频率以下的所有频率提供等量延时的特性，才被用于音频设备中，在音频设备中，必须在不损害频带内多信号的相位关系前提下，消除带外噪声。另外，贝塞尔滤波器的阶跃响应很快，并且没有过冲或振铃，这使它在作为音频DAC输出端的平滑滤波器，或音频ADC输入端的抗混叠滤波器方面，是一种出色的选择。贝塞尔滤波器还可用于分析D类放大器的输出，以及消除其它应用中的开关噪声，来提高失真测量和示波器波形测量的精确度。<br> <img src="http://www.elecfans.com/uploads/allimg/171113/2755780-1G113145TC15.jpg" alt=""></p>
+<h1 id="3-四种滤波器区别对比"><a href="#3-四种滤波器区别对比" class="headerlink" title="3.四种滤波器区别对比"></a>3.四种滤波器区别对比</h1><p>巴特沃斯滤波器的特点是通频带内的频率响应曲线最大限度平坦，没有起伏，而在阻频带则逐渐下降为零。</p>
+<p>　　切比雪夫滤波器在过渡带比巴特沃斯滤波器的衰减快，但频率响应的幅频特性不如后者平坦。切比雪夫滤波器和理想滤波器的频率响应曲线之间的误差最小，但是在通频带内存在幅度波动。</p>
+<p>　　贝塞尔滤波器具有最平坦的幅度和相位响应。带通（通常为用户关注区域）的相位响应近乎呈线性。</p>
+<p>　　相同阶数时：</p>
+<p>　　椭圆滤波器的幅频曲线下降最陡，其次为切比雪夫滤波器，再次为巴特沃斯滤波器，下降最平缓的为贝塞尔滤波器。</p>
+<p>　　巴特沃斯滤波器通带最平坦，阻带下降慢。</p>
+<p>　　切比雪夫滤波器通带等纹波，阻带下降较快。</p>
+<p>　　贝塞尔滤波器通带等纹波，阻带下降慢。也就是说幅频特性的选频特性最差。但是，贝塞尔滤波器具有最佳的线性相位特性。</p>
+<h2 id="椭圆滤波器在通带等纹波（阻带平坦或等纹波），阻带下降最快。"><a href="#椭圆滤波器在通带等纹波（阻带平坦或等纹波），阻带下降最快。" class="headerlink" title="　　椭圆滤波器在通带等纹波（阻带平坦或等纹波），阻带下降最快。"></a>　　椭圆滤波器在通带等纹波（阻带平坦或等纹波），阻带下降最快。</h2><p>###巴特沃斯</p>
+<h2 id=""><a href="#" class="headerlink" title=""></a><img src="http://www.elecfans.com/uploads/allimg/171113/2755780-1G113145K3B0.jpg" alt=""></h2><p>###贝塞尔</p>
+<h2 id="-1"><a href="#-1" class="headerlink" title=""></a><img src="http://www.elecfans.com/uploads/allimg/171113/2755780-1G113145P6120.jpg" alt=""></h2><p>###椭圆</p>
+<h2 id="-2"><a href="#-2" class="headerlink" title=""></a><img src="http://www.elecfans.com/uploads/allimg/171113/2755780-1G113145QG30.jpg" alt=""></h2><p>##切比雪夫<br><img src="http://www.elecfans.com/uploads/allimg/171113/2755780-1G113145RX40.jpg" alt=""><br><img src="/2019/04/20/滤波器/example.png&quot;图片&quot;" alt=""></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/04/14/画单片机主板PCB一些注意的/" rel="next" title="画单片机主板PCB一些注意的">
+                <i class="fa fa-chevron-left"></i> 画单片机主板PCB一些注意的
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+<span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_fav">收藏夹</a>
+<a class="jiathis_button_copy">复制网址</a>
+<a class="jiathis_button_email">邮件</a>
+<a class="jiathis_button_weixin">微信</a>
+<a class="jiathis_button_qzone">QQ空间</a>
+<a class="jiathis_button_tqq">腾讯微博</a>
+<a class="jiathis_button_douban">豆瓣</a>
+<a class="jiathis_button_share">一键分享</a>
+
+<a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript">
+var jiathis_config={
+  data_track_clickback:true,
+  summary:"",
+  shortUrl:false,
+  hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">John Doe</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-通频带"><span class="nav-number">1.</span> <span class="nav-text">1.通频带</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#通频带越窄，表明电路对通频带中心频率的选择能力越强。"><span class="nav-number">1.1.</span> <span class="nav-text">通频带越窄，表明电路对通频带中心频率的选择能力越强。</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2"><span class="nav-number">2.</span> <span class="nav-text">2.</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-巴特沃斯滤波器"><span class="nav-number">2.1.</span> <span class="nav-text">1.巴特沃斯滤波器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#巴特沃斯滤波器的特点是通频带内的频率响应曲线最大限度平坦，没有起伏，而在阻频带则逐渐下降为零。在振幅的对数对角频率的波特图上，从某一边界角频率开始，振幅随着角频率的增加而逐步减少，趋向负无穷大。巴特沃斯滤波器的频率特性曲线，无论在通带内还是阻带内都是频率的单调函数。因此，当通带的边界处满足指标要求时，通带内肯定会有裕量。所以，更有效的设计方法应该是将精确度均匀的分布在整个通带或阻带内，或者同时分布在两者之内。这样就可用较低阶数的系统满足要求。这可通过选择具有等波纹特性的逼近函数来达到。"><span class="nav-number">2.2.</span> <span class="nav-text"> 巴特沃斯滤波器的特点是通频带内的频率响应曲线最大限度平坦，没有起伏，而在阻频带则逐渐下降为零。在振幅的对数对角频率的波特图上，从某一边界角频率开始，振幅随着角频率的增加而逐步减少，趋向负无穷大。巴特沃斯滤波器的频率特性曲线，无论在通带内还是阻带内都是频率的单调函数。因此，当通带的边界处满足指标要求时，通带内肯定会有裕量。所以，更有效的设计方法应该是将精确度均匀的分布在整个通带或阻带内，或者同时分布在两者之内。这样就可用较低阶数的系统满足要求。这可通过选择具有等波纹特性的逼近函数来达到。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-切比雪夫滤波器"><span class="nav-number">2.3.</span> <span class="nav-text">2.切比雪夫滤波器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#切比雪夫滤波器是在通带或阻带上频率响应幅度等波纹波动的滤波器，振幅特性在通带内是等波纹。在阻带内是单调的称为切比雪夫I型滤波器；振幅特性在通带内是单调的，在阻带内是等波纹的称为切比雪夫II型滤波器。采用何种形式的切比雪夫滤波器取决于实际用途。"><span class="nav-number">2.4.</span> <span class="nav-text">切比雪夫滤波器是在通带或阻带上频率响应幅度等波纹波动的滤波器，振幅特性在通带内是等波纹。在阻带内是单调的称为切比雪夫I型滤波器；振幅特性在通带内是单调的，在阻带内是等波纹的称为切比雪夫II型滤波器。采用何种形式的切比雪夫滤波器取决于实际用途。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-椭圆滤波器"><span class="nav-number">2.5.</span> <span class="nav-text">3.椭圆滤波器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4。贝塞尔滤波器"><span class="nav-number">2.6.</span> <span class="nav-text">4。贝塞尔滤波器</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-四种滤波器区别对比"><span class="nav-number">3.</span> <span class="nav-text">3.四种滤波器区别对比</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#椭圆滤波器在通带等纹波（阻带平坦或等纹波），阻带下降最快。"><span class="nav-number">3.1.</span> <span class="nav-text">　　椭圆滤波器在通带等纹波（阻带平坦或等纹波），阻带下降最快。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-number">3.2.</span> <span class="nav-text"></span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#-1"><span class="nav-number">3.3.</span> <span class="nav-text"></span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#-2"><span class="nav-number">3.4.</span> <span class="nav-text"></span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+    </aside>
+    <div id="music163player">
+    <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="280" height="86" src="//music.163.com/outchain/player?type=2&id=38358214&auto=0&height=66">
+    </iframe>
+    </div>
+
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+<div class="powered-by">
+<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+  本站访客数:<span id="busuanzi_value_site_uv"></span>
+</span>
+</div>
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+<script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+
+
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+
+</div><script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>
+
