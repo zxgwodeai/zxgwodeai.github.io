@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="1.锁存器概述锁存器（Latch）是一种对脉冲电平敏感的存储单元电路，它们可以在特定输入脉冲电平作用下改变状态。锁存，就是把信号暂存以维持某种电平状态。锁存器的最主要作用是缓存，其次完成高速的控制器与慢速的外设的不同步问题，再其次是解决驱动的问题，最后是解决一个 I/O 口既能输出也能输入的问题。锁存器是利用电平控制数据的输入，它包括不带使能控制的锁存器和带使能控制的锁存器。2.锁存器工作原理">
+<meta property="og:type" content="article">
+<meta property="og:title" content="锁存器">
+<meta property="og:url" content="http://yoursite.com/2019/05/04/锁存器/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="1.锁存器概述锁存器（Latch）是一种对脉冲电平敏感的存储单元电路，它们可以在特定输入脉冲电平作用下改变状态。锁存，就是把信号暂存以维持某种电平状态。锁存器的最主要作用是缓存，其次完成高速的控制器与慢速的外设的不同步问题，再其次是解决驱动的问题，最后是解决一个 I/O 口既能输出也能输入的问题。锁存器是利用电平控制数据的输入，它包括不带使能控制的锁存器和带使能控制的锁存器。2.锁存器工作原理">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://file.elecfans.com/web1/M00/5E/B4/pIYBAFt78WKAUQnRAAAndchHk34261.jpg">
+<meta property="og:image" content="http://file.elecfans.com/web1/M00/5E/9E/o4YBAFt78VWAUC1QAAEreQX8fUw027.jpg">
+<meta property="og:image" content="http://file.elecfans.com/web1/M00/45/9A/o4YBAFpxgO-ABBpSAAEV3EpR1ds411.jpg">
+<meta property="og:updated_time" content="2019-05-04T06:46:44.206Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="锁存器">
+<meta name="twitter:description" content="1.锁存器概述锁存器（Latch）是一种对脉冲电平敏感的存储单元电路，它们可以在特定输入脉冲电平作用下改变状态。锁存，就是把信号暂存以维持某种电平状态。锁存器的最主要作用是缓存，其次完成高速的控制器与慢速的外设的不同步问题，再其次是解决驱动的问题，最后是解决一个 I/O 口既能输出也能输入的问题。锁存器是利用电平控制数据的输入，它包括不带使能控制的锁存器和带使能控制的锁存器。2.锁存器工作原理">
+<meta name="twitter:image" content="http://file.elecfans.com/web1/M00/5E/B4/pIYBAFt78WKAUQnRAAAndchHk34261.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/05/04/锁存器/">
+
+
+
+
+
+  <title>锁存器 | Hexo</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hexo</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/04/锁存器/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">锁存器</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-05-04T14:34:56+08:00">
+                2019-05-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="1-锁存器概述"><a href="#1-锁存器概述" class="headerlink" title="1.锁存器概述"></a>1.锁存器概述</h1><h3 id="锁存器（Latch）是一种对脉冲电平敏感的存储单元电路，它们可以在特定输入脉冲电平作用下改变状态。锁存，就是把信号暂存以维持某种电平状态。锁存器的最主要作用是缓存，其次完成高速的控制器与慢速的外设的不同步问题，再其次是解决驱动的问题，最后是解决一个-I-O-口既能输出也能输入的问题。锁存器是利用电平控制数据的输入，它包括不带使能控制的锁存器和带使能控制的锁存器。"><a href="#锁存器（Latch）是一种对脉冲电平敏感的存储单元电路，它们可以在特定输入脉冲电平作用下改变状态。锁存，就是把信号暂存以维持某种电平状态。锁存器的最主要作用是缓存，其次完成高速的控制器与慢速的外设的不同步问题，再其次是解决驱动的问题，最后是解决一个-I-O-口既能输出也能输入的问题。锁存器是利用电平控制数据的输入，它包括不带使能控制的锁存器和带使能控制的锁存器。" class="headerlink" title="锁存器（Latch）是一种对脉冲电平敏感的存储单元电路，它们可以在特定输入脉冲电平作用下改变状态。锁存，就是把信号暂存以维持某种电平状态。锁存器的最主要作用是缓存，其次完成高速的控制器与慢速的外设的不同步问题，再其次是解决驱动的问题，最后是解决一个 I/O 口既能输出也能输入的问题。锁存器是利用电平控制数据的输入，它包括不带使能控制的锁存器和带使能控制的锁存器。"></a>锁存器（Latch）是一种对脉冲电平敏感的存储单元电路，它们可以在特定输入脉冲电平作用下改变状态。锁存，就是把信号暂存以维持某种电平状态。锁存器的最主要作用是缓存，其次完成高速的控制器与慢速的外设的不同步问题，再其次是解决驱动的问题，最后是解决一个 I/O 口既能输出也能输入的问题。锁存器是利用电平控制数据的输入，它包括不带使能控制的锁存器和带使能控制的锁存器。</h3><h1 id="2-锁存器工作原理"><a href="#2-锁存器工作原理" class="headerlink" title="2.锁存器工作原理"></a>2.锁存器工作原理</h1><p>　　锁存器的工作原理如下：<br><img src="http://file.elecfans.com/web1/M00/5E/B4/pIYBAFt78WKAUQnRAAAndchHk34261.jpg" alt=""><br><img src="http://file.elecfans.com/web1/M00/5E/9E/o4YBAFt78VWAUC1QAAEreQX8fUw027.jpg" alt=""></p>
+<h1 id="3-锁存器作用"><a href="#3-锁存器作用" class="headerlink" title="3.锁存器作用"></a>3.锁存器作用</h1><h3 id="在LED和数码管显示方面，要维持一个数据的显示，往往要持续的快速的刷新。尤其是在四段八位数码管等这些要选通的显示设备上。在人类能够接受的刷新频率之内，大概每三十毫秒就要刷新一次。这就大大占用了处理器的处理时间，消耗了处理器的处理能力，还浪费了处理器的功耗。"><a href="#在LED和数码管显示方面，要维持一个数据的显示，往往要持续的快速的刷新。尤其是在四段八位数码管等这些要选通的显示设备上。在人类能够接受的刷新频率之内，大概每三十毫秒就要刷新一次。这就大大占用了处理器的处理时间，消耗了处理器的处理能力，还浪费了处理器的功耗。" class="headerlink" title="在LED和数码管显示方面，要维持一个数据的显示，往往要持续的快速的刷新。尤其是在四段八位数码管等这些要选通的显示设备上。在人类能够接受的刷新频率之内，大概每三十毫秒就要刷新一次。这就大大占用了处理器的处理时间，消耗了处理器的处理能力，还浪费了处理器的功耗。"></a>在LED和数码管显示方面，要维持一个数据的显示，往往要持续的快速的刷新。尤其是在四段八位数码管等这些要选通的显示设备上。在人类能够接受的刷新频率之内，大概每三十毫秒就要刷新一次。这就大大占用了处理器的处理时间，消耗了处理器的处理能力，还浪费了处理器的功耗。</h3><hr>
+<h2 id="锁存器的使用可以大大的缓解处理器在这方面的压力。当处理器把数据传输到锁存器并将其锁存后，锁存器的输出引脚便会一直保持数据状态直到下一次锁存新的数据为止。这样在数码管的显示内容不变之前，处理器的处理时间和IO引脚便可以释放。可以看出，处理器处理的时间仅限于显示内容发生变化的时候，这在整个显示时间上只是非常少的一个部分。而处理器在处理完后可以有更多的时间来执行其他的任务。这就是锁存器在LED和数码管显示方面的作用：节省了宝贵的MCU时间。"><a href="#锁存器的使用可以大大的缓解处理器在这方面的压力。当处理器把数据传输到锁存器并将其锁存后，锁存器的输出引脚便会一直保持数据状态直到下一次锁存新的数据为止。这样在数码管的显示内容不变之前，处理器的处理时间和IO引脚便可以释放。可以看出，处理器处理的时间仅限于显示内容发生变化的时候，这在整个显示时间上只是非常少的一个部分。而处理器在处理完后可以有更多的时间来执行其他的任务。这就是锁存器在LED和数码管显示方面的作用：节省了宝贵的MCU时间。" class="headerlink" title="###　锁存器的使用可以大大的缓解处理器在这方面的压力。当处理器把数据传输到锁存器并将其锁存后，锁存器的输出引脚便会一直保持数据状态直到下一次锁存新的数据为止。这样在数码管的显示内容不变之前，处理器的处理时间和IO引脚便可以释放。可以看出，处理器处理的时间仅限于显示内容发生变化的时候，这在整个显示时间上只是非常少的一个部分。而处理器在处理完后可以有更多的时间来执行其他的任务。这就是锁存器在LED和数码管显示方面的作用：节省了宝贵的MCU时间。"></a>###　锁存器的使用可以大大的缓解处理器在这方面的压力。当处理器把数据传输到锁存器并将其锁存后，锁存器的输出引脚便会一直保持数据状态直到下一次锁存新的数据为止。这样在数码管的显示内容不变之前，处理器的处理时间和IO引脚便可以释放。可以看出，处理器处理的时间仅限于显示内容发生变化的时候，这在整个显示时间上只是非常少的一个部分。而处理器在处理完后可以有更多的时间来执行其他的任务。这就是锁存器在LED和数码管显示方面的作用：节省了宝贵的MCU时间。</h2><p>所谓锁存器，就是输出端的状态不会随输入端的状态变化而变化，仅在有锁存信号时输入的状态才被保存到输出，直到下一个锁存信号到来时才改变。</p>
+<p>　　锁存器多用于集成电路中，在数字电路中作为时序电路的存储元件，在某些运算器电路中有时采用锁存器作为数据暂存器。</p>
+<p>　　封装为独立的产品后也可以单独应用，数据有效延迟于时钟信号有效。这意味着时钟信号先到，数据信号后到。</p>
+<p>　　在某些应用中，单片机的I/O 口上需要外接锁存器。例如，当单片机连接片外存储器时，要接上锁存器，这是为了实现地址的复用。假设，mcu端口其中的 8 路的 I/O 管脚既要用于地址信号又要用于数据信号，这时就可以用锁存器先将地址锁存起来。</p>
+<p>　　8051访问外部存储器时P0口和P2口共同做为地址总线，P0口常接锁存器再接存储器。以防止总线间的冲突。而P2口直接接存储器。因为单片机内部时序只能锁住P2口的地址，如果用P0口传输数据时不用锁存器的话，地址就改变了。</p>
+<p>　　看看8051单片机总线操作的时序图对我们很有帮助。由于数据总线、地址总线共用P0口，所以要分时复用。先送地址信息，由ALE使能锁存器将地址信息锁存在外设的地址端，然后送数据信息和读写使能信号，在指定的地址进行读写操作。</p>
+<p>　　使用锁存器来区分开单片机的地址和数据，8051系列的单片机用的比较多，也有一些单片机内部有地址锁存功能，如8279就不用锁存器了。</p>
+<h1 id="4-锁存器与缓冲器作用与区别"><a href="#4-锁存器与缓冲器作用与区别" class="headerlink" title="4.锁存器与缓冲器作用与区别"></a>4.锁存器与缓冲器作用与区别</h1><h3 id="锁存器就是把当前的状态锁存起来，使CPU送出的数据在接口电路的输出端保持一段时间锁存后状态不再发生变化，直到解除锁定。还有些芯片具有锁存器，比如芯片74LS244就具有锁存的功能，它可以通过把一个引脚置高后，输出就会保持现有的状态，直到把该引脚清0后才能继续变化。"><a href="#锁存器就是把当前的状态锁存起来，使CPU送出的数据在接口电路的输出端保持一段时间锁存后状态不再发生变化，直到解除锁定。还有些芯片具有锁存器，比如芯片74LS244就具有锁存的功能，它可以通过把一个引脚置高后，输出就会保持现有的状态，直到把该引脚清0后才能继续变化。" class="headerlink" title="锁存器就是把当前的状态锁存起来，使CPU送出的数据在接口电路的输出端保持一段时间锁存后状态不再发生变化，直到解除锁定。还有些芯片具有锁存器，比如芯片74LS244就具有锁存的功能，它可以通过把一个引脚置高后，输出就会保持现有的状态，直到把该引脚清0后才能继续变化。"></a>锁存器就是把当前的状态锁存起来，使CPU送出的数据在接口电路的输出端保持一段时间锁存后状态不再发生变化，直到解除锁定。还有些芯片具有锁存器，比如芯片74LS244就具有锁存的功能，它可以通过把一个引脚置高后，输出就会保持现有的状态，直到把该引脚清0后才能继续变化。</h3><p>###　　缓冲寄存器又称缓冲器，它分输入缓冲器和输出缓冲器两种。前者的作用是将外设送来的数据暂时存放，以便处理器将它取走；后者的作用是用来暂时存放处理器送往外设的数据。有了数控缓冲器，就可以使高速工作的CPU与慢速工作的外设起协调和缓冲作用，实现数据传送的同步。由于缓冲器接在数据总线上，故必须具有三态输出功能。</p>
+<h1 id="5-锁存器应用实例"><a href="#5-锁存器应用实例" class="headerlink" title="5.锁存器应用实例"></a>5.锁存器应用实例</h1><h3 id="1"><a href="#1" class="headerlink" title="1."></a>1.</h3><h2 id="I-O口复用：当单片机连接片外存储器时，要接上锁存器，这是为了实现地址的复用。假设，MCU端口其中的8路的I-O管脚既要用于地址信号又要用于数据信号，这时就可以用锁存器先将地址锁存起来。（具体操作：先送地址信息，由ALE使能锁存器将地址信息锁存在外设的地址端，然后送数据信息和读写使能信号，在指定的地址进行读写操作）"><a href="#I-O口复用：当单片机连接片外存储器时，要接上锁存器，这是为了实现地址的复用。假设，MCU端口其中的8路的I-O管脚既要用于地址信号又要用于数据信号，这时就可以用锁存器先将地址锁存起来。（具体操作：先送地址信息，由ALE使能锁存器将地址信息锁存在外设的地址端，然后送数据信息和读写使能信号，在指定的地址进行读写操作）" class="headerlink" title="I/O口复用：当单片机连接片外存储器时，要接上锁存器，这是为了实现地址的复用。假设，MCU端口其中的8路的I/O管脚既要用于地址信号又要用于数据信号，这时就可以用锁存器先将地址锁存起来。（具体操作：先送地址信息，由ＡＬＥ使能锁存器将地址信息锁存在外设的地址端，然后送数据信息和读写使能信号，在指定的地址进行读写操作）"></a>I/O口复用：当单片机连接片外存储器时，要接上锁存器，这是为了实现地址的复用。假设，MCU端口其中的8路的I/O管脚既要用于地址信号又要用于数据信号，这时就可以用锁存器先将地址锁存起来。（具体操作：先送地址信息，由ＡＬＥ使能锁存器将地址信息锁存在外设的地址端，然后送数据信息和读写使能信号，在指定的地址进行读写操作）</h2><h3 id="2"><a href="#2" class="headerlink" title="2 ."></a>2 .</h3><p>　　如果单片机的总线接口只作一种用途，不需要接锁存器；如果单片机的总线接口要作两种用途，就要用到锁存器。例如：一个I/O口要控制两个LED，对第一个LED送数据时，“打开”第一个锁存器而“锁住”第二个锁存器，使第二个LED上的数据不变。对第二个LED送数据时，“打开”第二个锁存器而“锁住”第一个锁存器，使第一个LED上的数据不变。如果单片机的一个口要做三种用途，则可用三个锁存器，操作过程相似。就这一种用法而言，可以把锁存器视为单片机的I/O口的扩展器。</p>
+<h1 id="6-常用74系列锁存器芯片介绍"><a href="#6-常用74系列锁存器芯片介绍" class="headerlink" title="6.常用74系列锁存器芯片介绍"></a>6.常用74系列锁存器芯片介绍</h1><h2 id="1-74–系列"><a href="#1-74–系列" class="headerlink" title="1.  74–系列"></a>1.  74–系列</h2><p>　　这是早期的产品，现仍在使用，但正逐渐被淘汰。</p>
+<p>##　　2．74H–系列</p>
+<p>　　这是74–系列的改进型，属于高速TTL产品。其―与非门‖的平均传输时间达10ns左右，但电路的静态功耗较大，目前该系列产品使用越来越少，逐渐被淘汰。</p>
+<p>##　　3．74S–系列</p>
+<p>　　这是TTL的高速型肖特基系列。在该系列中，采用了抗饱和肖特基二极管，速度较高，但品种较少。</p>
+<p>##　　4．74LS–系列</p>
+<p>　　这是当前TTL类型中的主要产品系列。品种和生产厂家都非常多。性能价格比比较高，目前</p>
+<p>　　在中小规模电路中应用非常普遍。</p>
+<p>##　　5．74ALS–系列</p>
+<p>　　这是―先进的低功耗肖特基‖系列。属于74LS–系列的后继产品，速度（典型值为4ns）、功耗（典型值为1mW）等方面都有较大的改进，但价格比较高。</p>
+<p>##　　6．74AS–系列</p>
+<p>　　这是74S–系列的后继产品，尤其速度（典型值为1.5ns）有显著的提高，又称―先进超高速肖特基‖系列。</p>
+<p>##　7．74HC–系列</p>
+<p>　　54/74HC–系列是高速CMOS标准逻辑电路系列，具有与74LS–系列同等的工作度和CMOS集成电路固有的低功耗及电源电压范围宽等特点。74HCxxx是74LSxxx同序号的翻版，型号最后几位数字相同，表示电路的逻辑功能、管脚排列完全兼容，为用74HC替代74LS提供了方便。<br><img src="http://file.elecfans.com/web1/M00/45/9A/o4YBAFpxgO-ABBpSAAEV3EpR1ds411.jpg" alt=""></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/04/20/滤波器/" rel="next" title="滤波器">
+                <i class="fa fa-chevron-left"></i> 滤波器
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+<span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_fav">收藏夹</a>
+<a class="jiathis_button_copy">复制网址</a>
+<a class="jiathis_button_email">邮件</a>
+<a class="jiathis_button_weixin">微信</a>
+<a class="jiathis_button_qzone">QQ空间</a>
+<a class="jiathis_button_tqq">腾讯微博</a>
+<a class="jiathis_button_douban">豆瓣</a>
+<a class="jiathis_button_share">一键分享</a>
+
+<a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript">
+var jiathis_config={
+  data_track_clickback:true,
+  summary:"",
+  shortUrl:false,
+  hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">John Doe</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-锁存器概述"><span class="nav-number">1.</span> <span class="nav-text">1.锁存器概述</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#锁存器（Latch）是一种对脉冲电平敏感的存储单元电路，它们可以在特定输入脉冲电平作用下改变状态。锁存，就是把信号暂存以维持某种电平状态。锁存器的最主要作用是缓存，其次完成高速的控制器与慢速的外设的不同步问题，再其次是解决驱动的问题，最后是解决一个-I-O-口既能输出也能输入的问题。锁存器是利用电平控制数据的输入，它包括不带使能控制的锁存器和带使能控制的锁存器。"><span class="nav-number">1.0.1.</span> <span class="nav-text">锁存器（Latch）是一种对脉冲电平敏感的存储单元电路，它们可以在特定输入脉冲电平作用下改变状态。锁存，就是把信号暂存以维持某种电平状态。锁存器的最主要作用是缓存，其次完成高速的控制器与慢速的外设的不同步问题，再其次是解决驱动的问题，最后是解决一个 I/O 口既能输出也能输入的问题。锁存器是利用电平控制数据的输入，它包括不带使能控制的锁存器和带使能控制的锁存器。</span></a></li></ol></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#2-锁存器工作原理"><span class="nav-number">2.</span> <span class="nav-text">2.锁存器工作原理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-锁存器作用"><span class="nav-number">3.</span> <span class="nav-text">3.锁存器作用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#在LED和数码管显示方面，要维持一个数据的显示，往往要持续的快速的刷新。尤其是在四段八位数码管等这些要选通的显示设备上。在人类能够接受的刷新频率之内，大概每三十毫秒就要刷新一次。这就大大占用了处理器的处理时间，消耗了处理器的处理能力，还浪费了处理器的功耗。"><span class="nav-number">3.0.1.</span> <span class="nav-text">在LED和数码管显示方面，要维持一个数据的显示，往往要持续的快速的刷新。尤其是在四段八位数码管等这些要选通的显示设备上。在人类能够接受的刷新频率之内，大概每三十毫秒就要刷新一次。这就大大占用了处理器的处理时间，消耗了处理器的处理能力，还浪费了处理器的功耗。</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#锁存器的使用可以大大的缓解处理器在这方面的压力。当处理器把数据传输到锁存器并将其锁存后，锁存器的输出引脚便会一直保持数据状态直到下一次锁存新的数据为止。这样在数码管的显示内容不变之前，处理器的处理时间和IO引脚便可以释放。可以看出，处理器处理的时间仅限于显示内容发生变化的时候，这在整个显示时间上只是非常少的一个部分。而处理器在处理完后可以有更多的时间来执行其他的任务。这就是锁存器在LED和数码管显示方面的作用：节省了宝贵的MCU时间。"><span class="nav-number">3.1.</span> <span class="nav-text">###　锁存器的使用可以大大的缓解处理器在这方面的压力。当处理器把数据传输到锁存器并将其锁存后，锁存器的输出引脚便会一直保持数据状态直到下一次锁存新的数据为止。这样在数码管的显示内容不变之前，处理器的处理时间和IO引脚便可以释放。可以看出，处理器处理的时间仅限于显示内容发生变化的时候，这在整个显示时间上只是非常少的一个部分。而处理器在处理完后可以有更多的时间来执行其他的任务。这就是锁存器在LED和数码管显示方面的作用：节省了宝贵的MCU时间。</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-锁存器与缓冲器作用与区别"><span class="nav-number">4.</span> <span class="nav-text">4.锁存器与缓冲器作用与区别</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#锁存器就是把当前的状态锁存起来，使CPU送出的数据在接口电路的输出端保持一段时间锁存后状态不再发生变化，直到解除锁定。还有些芯片具有锁存器，比如芯片74LS244就具有锁存的功能，它可以通过把一个引脚置高后，输出就会保持现有的状态，直到把该引脚清0后才能继续变化。"><span class="nav-number">4.0.1.</span> <span class="nav-text">锁存器就是把当前的状态锁存起来，使CPU送出的数据在接口电路的输出端保持一段时间锁存后状态不再发生变化，直到解除锁定。还有些芯片具有锁存器，比如芯片74LS244就具有锁存的功能，它可以通过把一个引脚置高后，输出就会保持现有的状态，直到把该引脚清0后才能继续变化。</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-锁存器应用实例"><span class="nav-number">5.</span> <span class="nav-text">5.锁存器应用实例</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1"><span class="nav-number">5.0.1.</span> <span class="nav-text">1.</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#I-O口复用：当单片机连接片外存储器时，要接上锁存器，这是为了实现地址的复用。假设，MCU端口其中的8路的I-O管脚既要用于地址信号又要用于数据信号，这时就可以用锁存器先将地址锁存起来。（具体操作：先送地址信息，由ALE使能锁存器将地址信息锁存在外设的地址端，然后送数据信息和读写使能信号，在指定的地址进行读写操作）"><span class="nav-number">5.1.</span> <span class="nav-text">I/O口复用：当单片机连接片外存储器时，要接上锁存器，这是为了实现地址的复用。假设，MCU端口其中的8路的I/O管脚既要用于地址信号又要用于数据信号，这时就可以用锁存器先将地址锁存起来。（具体操作：先送地址信息，由ＡＬＥ使能锁存器将地址信息锁存在外设的地址端，然后送数据信息和读写使能信号，在指定的地址进行读写操作）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2"><span class="nav-number">5.1.1.</span> <span class="nav-text">2 .</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6-常用74系列锁存器芯片介绍"><span class="nav-number">6.</span> <span class="nav-text">6.常用74系列锁存器芯片介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-74–系列"><span class="nav-number">6.1.</span> <span class="nav-text">1.  74–系列</span></a></li></ol></li></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+    </aside>
+    <div id="music163player">
+    <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="280" height="86" src="//music.163.com/outchain/player?type=2&id=38358214&auto=0&height=66">
+    </iframe>
+    </div>
+
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+<div class="powered-by">
+<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+  本站访客数:<span id="busuanzi_value_site_uv"></span>
+</span>
+</div>
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+<script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+
+
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+
+</div><script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/clicklove.js"></script>
+
